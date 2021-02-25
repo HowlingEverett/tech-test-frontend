@@ -4,7 +4,7 @@ export interface IAppTabContainer {
 
 export interface Job {
   id: number;
-  contactId: string;
+  contactId: number;
   start: string;
   end: string;
   location: string;

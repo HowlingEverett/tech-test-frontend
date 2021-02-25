@@ -1,0 +1,51 @@
+.job-search-input-container {
+  margin-bottom: 1rem;
+}
+
+.job-search-input-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.job-search-input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.6rem;
+}
+
+.job-search-results {
+  margin-bottom: 1.4rem;
+  display: flex;
+  background: #efeff1;
+  padding: 1rem;
+  border-radius: 0.1rem;
+}
+
+.job-search-results-primary {
+  flex: 1 0 auto;
+}
+
+.job-search-results-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.job-search-results-dates {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.job-search-results-dates-label {
+  display: block;
+}
+
+.job-search-results-dates-start {
+  margin-bottom: 0.4rem;
+}
+
+.job-search-loading-indicator {
+  text-align: center;
+  font-weight: bold;
+}

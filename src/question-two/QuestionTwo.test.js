@@ -1,18 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import * as data from "../server/db.json";
 
 import { QuestionTwo } from "./QuestionTwo";
-
-const mockDataService = {
-  getJobs: () => Promise.resolve(data.jobs),
-  getJobAllocations: () => Promise.resolve(data.jobAllocations),
-  getActivities: () => Promise.resolve(data.activities),
-  getActivityAllocations: () => Promise.resolve(data.activityAllocations),
-  getResources: () => Promise.resolve(data.resources),
-};
+import { MockDataService } from "../service/DataService.mock";
 
 test("fetched and merged data is in the expected shape", async () => {
-  render(<QuestionTwo service={mockDataService} />);
+  render(<QuestionTwo service={MockDataService} />);
 
   expect(
     await screen.findByText(
