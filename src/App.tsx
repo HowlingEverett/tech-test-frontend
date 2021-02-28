@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import "./App.css"
+import { useState, FC } from "react";
+import "./App.css";
 
-import { DataService } from "./service/DataService"
-import { QuestionOne } from "./question-one/QuestionOne"
-import { QuestionTwo } from "./question-two/QuestionTwo"
-import { QuestionThree } from "./question-three/QuestionThree"
+import { DataService } from "./service/DataService";
+import { QuestionOne } from "./question-one/QuestionOne";
+import { QuestionTwo } from "./question-two/QuestionTwo";
+import { QuestionThree } from "./question-three/QuestionThree";
 
 enum AppTabs {
   First = "first",
@@ -12,9 +12,9 @@ enum AppTabs {
   Third = "three",
 }
 
-const AvailableTabs: React.FC<{
-  onSelect: (tab: AppTabs) => void
-  selectedTab: AppTabs
+const AvailableTabs: FC<{
+  onSelect: (tab: AppTabs) => void;
+  selectedTab: AppTabs;
 }> = ({ onSelect, selectedTab }) => {
   return (
     <div className="app__tab-group">
@@ -46,31 +46,31 @@ const AvailableTabs: React.FC<{
         Third Question
       </div>
     </div>
-  )
-}
+  );
+};
 
-const Tabs: React.FC<{ selectedTab: AppTabs }> = ({ selectedTab }) => {
+const Tabs: FC<{ selectedTab: AppTabs }> = ({ selectedTab }) => {
   switch (selectedTab) {
     case AppTabs.Third:
-      return <QuestionThree service={DataService} />
+      return <QuestionThree service={DataService} />;
     case AppTabs.Second:
-      return <QuestionTwo service={DataService} />
+      return <QuestionTwo service={DataService} />;
     case AppTabs.First:
     default:
-      return <QuestionOne service={DataService} />
+      return <QuestionOne service={DataService} />;
   }
-}
+};
 
 function App() {
   const defaultTab =
-    (localStorage.getItem("selectedTab") as AppTabs) || AppTabs.First
+    (localStorage.getItem("selectedTab") as AppTabs) || AppTabs.First;
 
-  const [selectedTab, setSelectedTab] = useState(defaultTab)
+  const [selectedTab, setSelectedTab] = useState(defaultTab);
 
   const selectTab = (tab: AppTabs) => {
-    setSelectedTab(tab)
-    localStorage.setItem("selectedTab", tab)
-  }
+    setSelectedTab(tab);
+    localStorage.setItem("selectedTab", tab);
+  };
 
   return (
     <div className="app__container">
@@ -86,7 +86,7 @@ function App() {
         <Tabs selectedTab={selectedTab} />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

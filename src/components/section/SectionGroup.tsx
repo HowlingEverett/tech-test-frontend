@@ -1,3 +1,3 @@
-import React from "react"
+import { FC } from "react";
 
-export const SectionGroup: React.FC = (props) => <div>{props.children}</div>
+export const SectionGroup: FC = (props) => <div>{props.children}</div>;
